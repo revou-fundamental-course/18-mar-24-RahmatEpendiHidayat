@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!-- Untuk mengakali cache github, biar langsung update setelah di push berkala -->
+		<meta http-equiv='cache-control' content='no-cache'> 
+		<meta http-equiv='expires' content='0'> 
+		<meta http-equiv='pragma' content='no-cache'>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="GRIZZLY Outdoor Trip fill your experience, Make your trip enjoyable">
+		<meta name="keywords" content="GRIZZLY, Outdoor Trip, revou, FCSE mini project">
+		
+		<title>GRIZZLY Hiking Trip</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+		<link rel="stylesheet" href="./css/reset.css">
+		<link rel="stylesheet" href="./css/style.css">
+		<link rel="icon" href="./assets/Hiking.png" type="image/png">
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" integrity="sha512-24XP4a9KVoIinPFUbcnjIjAjtS59PUoxQj3GNVpWc86bCqPuy3YxAcxJrxFCxXe4GHtAumCbO2Ze2bddtuxaRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<nav class="navbar">
+					<div class="logo">
+						<img src="./assets/Logo_GRIZZLY_White.PNG" alt="grizzly logo" />
+					</div>
+					<button class="menu-button" id="menu-button" onclick="toggleMenuButton()">
+						<i data-feather="menu"></i>
+					</button>
+					<ul class="navigation-list" id="menu-list">
+						<li><a href="#hero" onclick="setTitle(this)">Home</a></li>
+						<li><a href="#our-package" onclick="setTitle(this)">Our Package</a></li>
+						<li><a href="#call-us" onclick="setTitle(this)">Call Us</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main class="main-content">
+			<div class="hero" id="hero">
+				<div class="hero-slider" id="hero-slider">
+					<img id="slide1" src="./assets/images/banner1.jpg" alt="" />
+					<img id="slide2" src="./assets/images/banner2.jpg" alt="" />
+					<img id="slide3" src="./assets/images/banner3.jpg" alt="" />
+					<img id="slide4" src="./assets/images/banner4.jpg" alt="" />
+					<img id="slide5" src="./assets/images/banner5.jpg" alt="" />
+					<img id="slide6" src="./assets/images/banner6.jpg" alt="" />
+					<img id="slide7" src="./assets/images/banner7.jpg" alt="" />
+					<img id="slide8" src="./assets/images/banner8.jpg" alt="" />
+					<img id="slide9" src="./assets/images/banner9.jpg" alt="" />
+					<img id="slide10" src="./assets/images/banner10.jpg" alt="" />
+					<img id="slide10" src="./assets/images/banner11.jpg" alt="" />
+				</div>
+				<div class="hero-wrapper">
+					<h1 class="main-title">Your Trusted Outdoor Trip Agent</h1>
+					<p class="hero-description">Discover a Better Journey</p>
+					<button class="button" onclick="getStartButton()">Booking Now!</button>
+				</div>
+			</div>
+			<div class="container">
+				<div class="about-contact" id="about">
+					<div class="about">
+						<img src="./assets/images/promotional.jpg" alt="Hiking" class="about-img" />
+						<p class="about-caption">Jobs fill your pockets, adventures fill your soul , GRIZZLY Outdoor Trip fill your experience, Make your trip enjoyable </p>
+						<div class="about-author">
+							<img src="./assets/images/avatar.jpg" alt="" class="author-img" />
+							<div class="author-data">
+								<div class="author-name">Rahmat Ependi</div>
+								<div class="author-info">Software Engineer, 30</div>
+							</div>
+						</div>
+						<hr class="border" />
+						<div class="feature">
+							<h2 class="subsection-title">Some of the benefits you will get by using our services :</h2>
+							<div class="feature-list">
+								<div class="feature-item">
+									<div class="feature-icon">
+										<i data-feather="globe"></i>
+									</div>
+									<div class="feature-description">Trips to various best destinations in Indonesia from Sabang to Merauke are also available.</div>
+								</div>
+								<div class="feature-item">
+									<div class="feature-icon">
+										<i data-feather="globe"></i>
+									</div>
+									<div class="feature-description">Ordering and payment is easy, fast, and can be done anytime and anywhere.</div>
+								</div>
+								<div class="feature-item">
+									<div class="feature-icon">
+										<i data-feather="globe"></i>
+									</div>
+									<div class="feature-description">There are attractive offers waiting for your next trip.</div>
+								</div>
+								<div class="feature-item">
+									<div class="feature-icon">
+										<i data-feather="globe"></i>
+									</div>
+									<div class="feature-description">Up to 90% cash back if you cancel your trip.</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="contact">
+						<h2 class="subsection-title">Contact Us</h2>
+						<p>Sales will contact you 1 x 24 hours after we receive your data</p>
+						<form class="contact-form" name="contact-form" onsubmit="return validateForm()">
+							<div class="form-field">
+								<label for="name" class="input-label">Your name:</label>
+								<input type="text" id="name" name="name" class="input-field" placeholder="First name and last name" oninput="fillInput('name')" />
+								<p class="error-msg" id="name-error">Please fill your name</p>
+							</div>
+							<div class="form-field">
+								<label for="email" class="input-label">Email Address:</label>
+								<input type="text" id="email" name="email" class="input-field" placeholder="example@email.com" oninput="fillInput('email')" />
+								<p class="error-msg" id="email-error">Please fill your email with a correct format</p>
+							</div>
+							<div class="form-field">
+								<label for="interest" class="input-label">What are you interested in?</label>
+								<select id="interest" name="interest" class="input-field" oninput="selectInterest()">
+									<option value="none" selected disabled>Select option</option>
+									<option value="option 1">Hiking and Running </option>
+									<option value="option 2">Wildlife and Animals </option>
+									<option value="option 3">Camping & Campervan</option>
+									<option value="option 4">Downhill Bike & Motocross</option>
+									<option value="option 5">4x4 Offroad</option>
+									<option value="option 6">Climbing and Mountaineering</option>
+									<option value="option 7">Diving & Water Activities</option>
+									<option value="option 8">Adrenaline Activities</option>
+								</select>
+								<p class="error-msg" id="interest-error">Please select one interest</p>
+							</div>
+							<button type="submit" class="button">Send</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="package" id="our-package">
+				<div class="package-banner">
+					<div class="container">
+						<h2 class="section-title">Our Packages</h2>
+					</div>
+				</div>
+				<div class="container">
+					<div class="package-list">
+						<div class="package-item">
+							<div class="package-icon">
+								<i data-feather="compass"></i>
+							</div>
+							<div class="package-content">
+								<h3>1 Day Easy</h3>
+								<h4>Rafting</h4>
+								<h4>175K/Person --> Min.5 Peson</h4>
+								<p>Package Include : Documentation, First Aid Safety Equipment, Guide team, Rescue Team, 
+Local Transport, Instructor, Lunch</p>
+							</div>
+						</div>
+						<div class="package-item">
+							<div class="package-icon">
+								<i data-feather="compass"></i>
+							</div>
+							<div class="package-content">
+								<h3>1 Day Medium</h3>
+								<h4>Rafting | Flying Fox </h4>
+								<h4>195K/Person --> Min.10 Peson</h4>
+								<p>Package Include : Documentation, First Aid Safety Equipment, Guide team, Rescue Team, 
+Local Transport, Instructor, Lunch.</p>
+							</div>
+						</div>
+						<div class="package-item">
+							<div class="package-icon">
+								<i data-feather="compass"></i>
+							</div>
+							<div class="package-content">
+								<h3>1 Day Hard</h3>
+								<h4>Rafting | Flying Fox | 4x4 Offroad </h4>
+								<h4>500K/Person --> Min.15 Peson</h4>
+								<p>Package Include : Documentation, First Aid Safety Equipment, Guide team, Rescue Team, 
+Local Transport, Instructor, Lunch.</p>
+							</div>
+						</div>
+					</div>
+					<hr class="border" />
+					<div class="package-list">
+						<div class="package-item">
+							<div class="package-icon">
+								<i data-feather="compass"></i>
+							</div>
+							<div class="package-content">
+								<h3>3 Day 1 Night</h3>
+								<h4>Hiking & Camping</h4>
+								<h4>750K/Person --> Min.4 Peson</h4>
+								<p>Package Include : Documentation, First Aid Safety Equipment, Trip Guide, 
+Tableware, Camping equipment, Eat 3 times a day.</p>
+							</div>
+						</div>
+						<div class="package-item">
+							<div class="package-icon">
+								<i data-feather="compass"></i>
+							</div>
+							<div class="package-content">
+								<h3>2 Day 1 Night</h3>
+								<h4>Climbing & Camping</h4>
+								<h4>500K/Person --> Min.10 Peson</h4>
+								<p>Package Include : Documentation, First Aid Safety Equipment, Rescue Team, 
+									Local Transport, Instructor, Tableware, Camping equipment, Eat 3 times a day.</p>
+							</div>
+						</div>
+						<div class="package-item">
+							<div class="package-icon">
+								<i data-feather="compass"></i>
+							</div>
+							<div class="package-content">
+								<h3>1 Day in water</h3>
+								<h4>Diving & Snorkling</h4>
+								<h4>800K/Person --> Min.10 Peson</h4>
+								<p>Package Include : Documentation, Documentation, First Aid Safety Equipment, Guide team, Rescue Team, 
+									Local Transport, Boat, Diving & snorkeling equipment,  Instructor, Lunch.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="cta" id="call-us">
+				<div class="container">
+					<h2 class="section-title">Talk with Us</h2>
+					<p>Want to book a trip? Is there a problem that requires help? Please contact us by pressing the button below</p>
+					<button class="button">Hubungi Kami</button>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="logo">
+					<img src="./assets/Logo_GRIZZLY_Orange.PNG" alt="grizzly logo" width="192" />
+				</div>
+				<ul class="footer-navigation">
+					<li><a href="#">Terms of Service</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+				</ul>
+				<div>© 2024 Rahmat Ependi</div>
+			</div>
+		</footer>
+
+		<script>
+			feather.replace();
+		</script>
+		<script src="./js/validation.js"></script>
+		<script src="./js/script.js"></script>
+		<script src="./js/slideShow.js"></script>
+	</body>
+</html>
